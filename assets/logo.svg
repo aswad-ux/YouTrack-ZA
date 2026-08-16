@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220">
+  <defs>
+    <!-- Blue gradient for right arm -->
+    <linearGradient id="blueBody" x1="0.9" y1="0" x2="0.1" y2="1">
+      <stop offset="0%" stop-color="#5BA3D9"/>
+      <stop offset="100%" stop-color="#2B6CB0"/>
+    </linearGradient>
+    <!-- Glossy highlight on upper edge of blue arm -->
+    <linearGradient id="blueGloss" x1="0.5" y1="0" x2="0.5" y2="1">
+      <stop offset="0%" stop-color="#8DC9F0" stop-opacity="0.7"/>
+      <stop offset="40%" stop-color="#5BA3D9" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 
+    YouTrackZA "Y" Icon
+    Three overlapping leaf/petal shapes forming a Y.
+    Layer order: stem (back), left arm, right arm (front)
+  -->
+
+  <!-- Lower-left white stem petal -->
+  <path d="
+    M 105 108
+    C 118 142, 82 192, 58 212
+    C 38 200, 78 140, 95 105
+    Z
+  " fill="#FFFFFF"/>
+
+  <!-- Upper-left white petal -->
+  <path d="
+    M 30 22
+    C 68 -2, 118 48, 108 105
+    C 90 88, 8 52, 30 22
+    Z
+  " fill="#FFFFFF"/>
+
+  <!-- Upper-right blue petal -->
+  <path d="
+    M 172 16
+    C 182 52, 130 92, 102 108
+    C 115 70, 158 10, 172 16
+    Z
+  " fill="url(#blueBody)"/>
+
+  <!-- Glossy highlight strip on blue petal -->
+  <path d="
+    M 172 16
+    C 158 10, 115 70, 102 108
+    C 118 78, 160 22, 172 16
+    Z
+  " fill="url(#blueGloss)"/>
+</svg>
