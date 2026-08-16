@@ -4,24 +4,19 @@
     <filter id="logo-shadow" x="-20%" y="-20%" width="140%" height="140%">
       <feDropShadow dx="1" dy="2" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.25"/>
     </filter>
-    <!-- Darker blue body gradient -->
-    <linearGradient id="blueBody" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#3A82C4"/>
-      <stop offset="100%" stop-color="#215B8F"/>
-    </linearGradient>
   </defs>
 
   <g filter="url(#logo-shadow)">
-    <!-- Top-Left White Curve -->
+    <!-- Top-Left Curve -->
     <path d="M 15 15 L 35 15 L 50 45 L 40 45 Q 20 30 15 15 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round"/>
     
-    <!-- Bottom White Block -->
+    <!-- Bottom Block -->
     <path d="M 48 49 L 68 49 L 53 79 L 33 79 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round"/>
     
-    <!-- Top-Right Blue Base -->
-    <path d="M 85 15 L 105 15 L 90 45 L 70 45 Z" fill="url(#blueBody)" stroke="url(#blueBody)" stroke-width="2.5" stroke-linejoin="round"/>
+    <!-- Top-Right Base -->
+    <path d="M 85 15 L 105 15 L 90 45 L 70 45 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round"/>
     
-    <!-- Top-Right Gloss (Subtle overlay with curved bottom edge) -->
-    <path d="M 85 15 L 105 15 L 97.5 30 C 88 28, 80 28, 77.5 30 Z" fill="#69B3E7" stroke="#69B3E7" stroke-width="1.5" stroke-linejoin="round"/>
+    <!-- Top-Right Gloss -->
+    <path d="M 85 15 L 105 15 L 97.5 30 C 88 28, 80 28, 77.5 30 Z" fill="#FFFFFF" fill-opacity="0.3" stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="1.5" stroke-linejoin="round"/>
   </g>
 </svg>

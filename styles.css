@@ -191,33 +191,34 @@ button, input, select, textarea {
 
 /* Buttons */
 .btn-primary {
-  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
-  color: #000000;
+  background: #FFFFFF;
+  color: #0F172A;
   font-family: var(--font-mono);
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 10px 20px;
   border-radius: var(--radius-sm);
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
-  background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 100%);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3);
+  background: #F8FAFC;
 }
 
 .btn-outline {
   background: transparent;
-  border: 1px solid var(--accent-blue);
-  color: #E2E8F0;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
   font-family: var(--font-mono);
   font-size: 14px;
   font-weight: 700;
@@ -226,12 +227,15 @@ button, input, select, textarea {
   padding: 10px 20px;
   border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .btn-outline:hover {
-  background: rgba(59, 130, 246, 0.1);
-  border-color: #60A5FA;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #FFFFFF;
 }
 
 /* Hero Section */
