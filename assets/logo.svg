@@ -1,52 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 220">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
   <defs>
-    <!-- Blue gradient for right arm -->
-    <linearGradient id="blueBody" x1="0.9" y1="0" x2="0.1" y2="1">
-      <stop offset="0%" stop-color="#5BA3D9"/>
-      <stop offset="100%" stop-color="#2B6CB0"/>
+    <filter id="logo-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="1" dy="2" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+    <linearGradient id="blueBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A82C4"/>
+      <stop offset="100%" stop-color="#215B8F"/>
     </linearGradient>
-    <!-- Glossy highlight on upper edge of blue arm -->
-    <linearGradient id="blueGloss" x1="0.5" y1="0" x2="0.5" y2="1">
-      <stop offset="0%" stop-color="#8DC9F0" stop-opacity="0.7"/>
-      <stop offset="40%" stop-color="#5BA3D9" stop-opacity="0"/>
+    <linearGradient id="blueGloss" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7CB9E8"/>
+      <stop offset="100%" stop-color="#5599D9"/>
     </linearGradient>
   </defs>
 
-  <!-- 
-    YouTrackZA "Y" Icon
-    Three overlapping leaf/petal shapes forming a Y.
-    Layer order: stem (back), left arm, right arm (front)
-  -->
-
-  <!-- Lower-left white stem petal -->
-  <path d="
-    M 105 108
-    C 118 142, 82 192, 58 212
-    C 38 200, 78 140, 95 105
-    Z
-  " fill="#FFFFFF"/>
-
-  <!-- Upper-left white petal -->
-  <path d="
-    M 30 22
-    C 68 -2, 118 48, 108 105
-    C 90 88, 8 52, 30 22
-    Z
-  " fill="#FFFFFF"/>
-
-  <!-- Upper-right blue petal -->
-  <path d="
-    M 172 16
-    C 182 52, 130 92, 102 108
-    C 115 70, 158 10, 172 16
-    Z
-  " fill="url(#blueBody)"/>
-
-  <!-- Glossy highlight strip on blue petal -->
-  <path d="
-    M 172 16
-    C 158 10, 115 70, 102 108
-    C 118 78, 160 22, 172 16
-    Z
-  " fill="url(#blueGloss)"/>
+  <g filter="url(#logo-shadow)">
+    <!-- Top-Left White Curve -->
+    <path d="M 26 22 L 42 22 L 48 45 L 42 60 C 30 58, 18 40, 26 22 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-linejoin="round"/>
+    
+    <!-- Bottom White Block -->
+    <path d="M 53 52 L 73 52 L 61 82 L 41 82 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="3" stroke-linejoin="round"/>
+    
+    <!-- Top-Right Blue Base -->
+    <path d="M 68 22 L 88 22 L 78 47 L 58 47 Z" fill="url(#blueBody)" stroke="url(#blueBody)" stroke-width="3" stroke-linejoin="round"/>
+    
+    <!-- Top-Right Gloss -->
+    <path d="M 68 22 L 88 22 L 83 34.5 C 75 32, 68 32, 63 34.5 Z" fill="url(#blueGloss)" stroke="url(#blueGloss)" stroke-width="2" stroke-linejoin="round"/>
+  </g>
 </svg>
