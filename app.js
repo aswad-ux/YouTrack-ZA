@@ -211,5 +211,75 @@ document.addEventListener('DOMContentLoaded', () => {
       tierCards[2].style.transform = 'scale(1)';
       tierCards[3].style.transform = 'scale(1)';
     });
+    });
   }
+
+  // Command Center: Gateway Toggle Logic
+  const gatewayBtns = document.querySelectorAll('.gateway-btn');
+  const businessElements = document.querySelectorAll('.audience-business');
+  const consumerElements = document.querySelectorAll('.audience-consumer');
+
+  gatewayBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      // Toggle active class on buttons
+      gatewayBtns.forEach(b => b.classList.remove('active'));
+      e.target.classList.add('active');
+
+      const target = e.target.getAttribute('data-target');
+      
+      if (target === 'business') {
+        businessElements.forEach(el => el.style.display = 'block');
+        consumerElements.forEach(el => el.style.display = 'none');
+      } else {
+        businessElements.forEach(el => el.style.display = 'none');
+        consumerElements.forEach(el => el.style.display = 'block');
+      }
+    });
+  });
+
+  // Command Center: Calculator Modal Logic
+  const calcModal = document.getElementById('calculator-modal');
+  const closeCalc = document.getElementById('close-calc');
+  const fleetSize = document.getElementById('fleet-size');
+  const fuelSpend = document.getElementById('fuel-spend');
+  const fleetVal = document.getElementById('fleet-val');
+  const fuelVal = document.getElementById('fuel-val');
+  const savingsTotal = document.getElementById('savings-total');
+
+  if (closeCalc && calcModal) {
+    closeCalc.addEventListener('click', () => {
+      calcModal.style.display = 'none';
+    });
+  }
+
+  function calculateSavings() {
+    if (!fleetSize || !fuelSpend || !savingsTotal) return;
+    
+    const size = parseInt(fleetSize.value);
+    const fuel = parseInt(fuelSpend.value);
+    
+    // Update display values
+    fleetVal.textContent = size;
+    fuelVal.textContent = 'R ' + fuel.toLocaleString();
+    
+    // Formula: (Fleet * Fuel) * 0.15 (15% savings on fuel + maintenance)
+    const savings = (size * fuel) * 0.15;
+    savingsTotal.textContent = 'R ' + savings.toLocaleString();
+  }
+
+  if (fleetSize && fuelSpend) {
+    fleetSize.addEventListener('input', calculateSavings);
+    fuelSpend.addEventListener('input', calculateSavings);
+    calculateSavings(); // Initial calc
+  }
+
 });
+
+  // Hook up open button
+  const openCalc = document.getElementById('open-calc');
+  if (openCalc) {
+    openCalc.addEventListener('click', () => {
+      if (calcModal) calcModal.style.display = 'block';
+    });
+  }
+
