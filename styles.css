@@ -851,6 +851,20 @@ button, input, select, textarea {
   color: rgba(255, 255, 255, 0.2);
 }
 
+/* Override browser autofill styling to maintain dark theme */
+.inline-input:-webkit-autofill,
+.inline-input:-webkit-autofill:hover,
+.inline-input:-webkit-autofill:focus,
+.inline-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #0a192f inset !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  background-color: #0a192f !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3) !important;
+  font-size: 32px !important;
+  font-family: var(--font-heading) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 .inline-input:focus, .inline-select:focus {
   border-bottom-color: #FFFFFF;
   background: rgba(255,255,255,0.02);
