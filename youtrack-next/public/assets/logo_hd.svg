@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 120" width="100%" height="100%">
+  <!-- Logo Icon -->
+  <g transform="translate(10, 15)" stroke-linejoin="round" stroke-linecap="round">
+    
+    <!-- White Shape -->
+    <!-- Add stroke to create the rounded corners effect -->
+    <path d="M 20 15 L 45 15 L 65 50 L 40 90 L 15 90 L 40 50 Z" 
+          fill="#FFFFFF" stroke="#FFFFFF" stroke-width="6" />
+
+    <!-- Blue Shape -->
+    <!-- Gradient for the highlight on the blue shape -->
+    <defs>
+      <linearGradient id="blueHighlight" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#60A5FA" />
+        <stop offset="40%" stop-color="#3B82F6" />
+        <stop offset="100%" stop-color="#2563EB" />
+      </linearGradient>
+    </defs>
+    
+    <!-- Gap created by shifting right -->
+    <path d="M 88 15 L 113 15 L 90 50 L 65 50 Z" 
+          fill="url(#blueHighlight)" stroke="url(#blueHighlight)" stroke-width="6" 
+          transform="translate(4, 0)" />
+  </g>
+
+  <!-- Text: YouTrackZA -->
+  <text x="145" y="82" font-family="Inter, system-ui, sans-serif" font-size="68" font-weight="700" fill="#FFFFFF" letter-spacing="-2">YouTrack<tspan font-weight="400">ZA</tspan></text>
+</svg>

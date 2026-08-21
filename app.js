@@ -410,8 +410,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Command Center: Gateway Toggle Logic
   const gatewayBtns = document.querySelectorAll('.gateway-btn');
-  const businessElements = document.querySelectorAll('.audience-business');
-  const consumerElements = document.querySelectorAll('.audience-consumer');
+
+  // Set default body class
+  document.body.classList.add('mode-business');
 
   gatewayBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -422,11 +423,11 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = e.target.getAttribute('data-target');
       
       if (target === 'business') {
-        businessElements.forEach(el => el.style.display = 'block');
-        consumerElements.forEach(el => el.style.display = 'none');
+        document.body.classList.add('mode-business');
+        document.body.classList.remove('mode-consumer');
       } else {
-        businessElements.forEach(el => el.style.display = 'none');
-        consumerElements.forEach(el => el.style.display = 'block');
+        document.body.classList.add('mode-consumer');
+        document.body.classList.remove('mode-business');
       }
     });
   });

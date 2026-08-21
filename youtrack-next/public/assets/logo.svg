@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100" width="100%" height="100%">
+  <defs>
+    <!-- Drop shadow for a slightly elevated 3D feel -->
+    <filter id="logo-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="1" dy="2" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#logo-shadow)">
+    <!-- Top-Left Curve -->
+    <path d="M 15 15 L 35 15 L 50 45 L 40 45 Q 20 30 15 15 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round"/>
+    
+    <!-- Bottom Block -->
+    <path d="M 48 49 L 68 49 L 53 79 L 33 79 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round"/>
+    
+    <!-- Top-Right Base -->
+    <path d="M 85 15 L 105 15 L 90 45 L 70 45 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2.5" stroke-linejoin="round"/>
+    
+    <!-- Top-Right Gloss -->
+    <path d="M 85 15 L 105 15 L 97.5 30 C 88 28, 80 28, 77.5 30 Z" fill="#FFFFFF" fill-opacity="0.3" stroke="#FFFFFF" stroke-opacity="0.3" stroke-width="1.5" stroke-linejoin="round"/>
+  </g>
+</svg>

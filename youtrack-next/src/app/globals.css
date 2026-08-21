@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Minimalist Monochromatic Core */
+  --color-page-bg: #FAFAFA;
+  --color-page-surface: #FFFFFF;
+  --color-text-primary: #111111;
+  --color-text-secondary: #555555;
+  --color-border-subtle: #EAEAEA;
+  --color-border-strong: #111111;
+  --color-brand-blue: #2563EB; /* Added Brand Blue for typography highlights */
+}
+
+body {
+  @apply bg-page-bg text-text-primary antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-bold tracking-tighter;
+}
