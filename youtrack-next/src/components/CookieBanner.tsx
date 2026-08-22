@@ -39,10 +39,10 @@ export function CookieBanner() {
                   <span className="text-xl">🍪</span>
                   <h3 className="text-white font-semibold text-lg">We value your privacy</h3>
                 </div>
-                <p className="text-text-secondary text-sm leading-relaxed">
+                <p className="text-slate-300 text-sm leading-relaxed">
                   We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. 
                   By clicking "Accept All", you consent to our use of cookies as described in our{' '}
-                  <Link href="/cookie-policy" className="text-accent-primary hover:underline font-medium">
+                  <Link href="/cookie-policy" className="text-white hover:underline font-medium">
                     Cookie Policy
                   </Link>.
                 </p>
@@ -50,13 +50,13 @@ export function CookieBanner() {
               <div className="flex flex-col sm:flex-row gap-3 w-full md:w-auto shrink-0">
                 <Link 
                   href="/cookie-policy"
-                  className="px-6 py-2.5 rounded-xl border border-white/10 text-text-secondary hover:text-white hover:bg-white/5 transition-colors text-sm font-medium text-center"
+                  className="px-6 py-2.5 rounded-xl border border-white/20 text-slate-300 hover:text-white hover:bg-white/10 transition-colors text-sm font-medium text-center"
                 >
                   Learn More
                 </Link>
                 <button
                   onClick={acceptCookies}
-                  className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-accent-primary to-accent-secondary text-black font-bold transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(245,158,11,0.3)] text-sm"
+                  className="px-6 py-2.5 rounded-xl bg-[#1C5795] hover:bg-[#154273] text-white font-bold transition-all hover:scale-105 active:scale-95 shadow-[0_4px_14px_rgba(28,87,149,0.3)] text-sm"
                 >
                   Accept All
                 </button>
