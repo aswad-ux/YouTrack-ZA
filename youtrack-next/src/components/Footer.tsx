@@ -67,7 +67,7 @@ export function Footer() {
             &copy; {currentYear} YouTrack ZA. All rights reserved.
           </p>
           <div className="text-white/80 text-xs font-light tracking-wide">
-            Designed with <span className="text-white">Intelligence</span>.
+            ASWAD design
           </div>
         </div>
       </div>
