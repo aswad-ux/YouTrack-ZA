@@ -2,6 +2,7 @@
 import React, { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { motion } from 'framer-motion';
+import { sendEmailAction } from '../app/actions/sendEmail';
 
 function FormContent({ variant }: { variant: 'personal' | 'fleet' }) {
   const searchParams = useSearchParams();
@@ -19,7 +20,7 @@ function FormContent({ variant }: { variant: 'personal' | 'fleet' }) {
     agree: false
   });
   
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
   useEffect(() => {
     const packageParam = searchParams.get('package');
@@ -31,10 +32,26 @@ function FormContent({ variant }: { variant: 'personal' | 'fleet' }) {
     }
   }, [searchParams]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
+    setStatus('loading');
+    
+    try {
+      const data = new FormData(e.currentTarget);
+      const result = await sendEmailAction(data);
+      
+      if (result.success) {
+        setStatus('success');
+        // Reset after 5 seconds
+        setTimeout(() => setStatus('idle'), 5000);
+      } else {
+        setStatus('error');
+        alert(`Error: ${result.error}`);
+      }
+    } catch (error) {
+      setStatus('error');
+      alert(`Unexpected Error: ${error}`);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -198,9 +215,13 @@ function FormContent({ variant }: { variant: 'personal' | 'fleet' }) {
 
               <button 
                 type="submit"
-                className="w-full bg-[#1C5795] text-white py-4 font-bold tracking-tight hover:bg-[#154273] transition-colors rounded-sm"
+                disabled={status === 'loading'}
+                className="w-full bg-[#1C5795] text-white py-4 font-bold tracking-tight hover:bg-[#154273] transition-colors rounded-sm disabled:opacity-70"
               >
-                {submitted ? 'Sent Successfully ✓' : 'Request Quote'}
+                {status === 'loading' && 'Sending...'}
+                {status === 'success' && 'Sent Successfully ✓'}
+                {status === 'error' && 'Failed to Send - Try Again'}
+                {status === 'idle' && 'Request Quote'}
               </button>
             </div>
           </form>
