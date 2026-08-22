@@ -15,6 +15,7 @@ export async function sendEmailAction(formData: FormData) {
     const tier = formData.get('tier') as string;
     const vehicleMake = formData.get('vehicleMake') as string;
     const vehicleYear = formData.get('vehicleYear') as string;
+    const comments = formData.get('comments') as string;
     
     // Construct the email body based on what was submitted
     let htmlContent = `
@@ -29,6 +30,7 @@ export async function sendEmailAction(formData: FormData) {
     if (tier) htmlContent += `<p><strong>Requested Package:</strong> ${tier}</p>`;
     if (vehicleMake) htmlContent += `<p><strong>Vehicle Make:</strong> ${vehicleMake}</p>`;
     if (vehicleYear) htmlContent += `<p><strong>Vehicle Year:</strong> ${vehicleYear}</p>`;
+    if (comments) htmlContent += `<p><strong>Additional Comments:</strong><br/>${comments}</p>`;
 
     // Send the email
     const response = await resend.emails.send({

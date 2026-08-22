@@ -18,6 +18,7 @@ function FormContent({ variant }: { variant: 'personal' | 'fleet' }) {
     tier: '',
     email: '',
     phone: '',
+    comments: '',
     agree: false
   });
   
@@ -48,7 +49,7 @@ function FormContent({ variant }: { variant: 'personal' | 'fleet' }) {
           setStatus('idle');
           // Reset form data
           setFormData({
-            name: '', company: '', fleetSize: '', industry: '', vehicleMake: '', vehicleYear: '', tier: '', email: '', phone: '', agree: false
+            name: '', company: '', fleetSize: '', industry: '', vehicleMake: '', vehicleYear: '', tier: '', email: '', phone: '', comments: '', agree: false
           });
         }, 5000);
       } else {
@@ -187,37 +188,47 @@ function FormContent({ variant }: { variant: 'personal' | 'fleet' }) {
                   </div>
 
                   {variant === 'fleet' && (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2 flex flex-col">
-                        <label className="text-sm font-semibold text-text-primary">Package of Interest</label>
-                        <select 
-                          name="tier" required value={formData.tier} onChange={handleChange}
-                          className="w-full bg-page-bg border border-border-subtle focus:border-brand-blue outline-none text-text-primary px-4 py-3 transition-colors rounded-sm"
-                        >
-                          <option value="" disabled>Select Package</option>
-                          <option value="Trace">YouTrack Trace</option>
-                          <option value="Shield">YouTrack Shield</option>
-                          <option value="Guard">YouTrack Guard</option>
-                          <option value="Sentinel">YouTrack Sentinel</option>
-                          <option value="Dashcams">Dashcams Only</option>
-                          <option value="Fuel">Fuel Monitoring Only</option>
-                          <option value="Custom">Custom Solution</option>
-                        </select>
+                    <>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="space-y-2 flex flex-col">
+                          <label className="text-sm font-semibold text-text-primary">Package of Interest</label>
+                          <select 
+                            name="tier" required value={formData.tier} onChange={handleChange}
+                            className="w-full bg-page-bg border border-border-subtle focus:border-brand-blue outline-none text-text-primary px-4 py-3 transition-colors rounded-sm"
+                          >
+                            <option value="" disabled>Select Package</option>
+                            <option value="Trace">YouTrack Trace</option>
+                            <option value="Shield">YouTrack Shield</option>
+                            <option value="Guard">YouTrack Guard</option>
+                            <option value="Sentinel">YouTrack Sentinel</option>
+                            <option value="Dashcams">Dashcams Only</option>
+                            <option value="Fuel">Fuel Monitoring Only</option>
+                            <option value="Custom">Custom Solution</option>
+                          </select>
+                        </div>
+                        <div className="space-y-2 flex flex-col">
+                          <label className="text-sm font-semibold text-text-primary">Estimated Fleet Size</label>
+                          <select 
+                            name="fleetSize" required value={formData.fleetSize} onChange={handleChange}
+                            className="w-full bg-page-bg border border-border-subtle focus:border-brand-blue outline-none text-text-primary px-4 py-3 transition-colors rounded-sm"
+                          >
+                            <option value="" disabled>Select Size</option>
+                            <option value="1-5">1 - 5 Vehicles</option>
+                            <option value="6-20">6 - 20 Vehicles</option>
+                            <option value="21-50">21 - 50 Vehicles</option>
+                            <option value="50+">50+ Vehicles</option>
+                          </select>
+                        </div>
                       </div>
                       <div className="space-y-2 flex flex-col">
-                        <label className="text-sm font-semibold text-text-primary">Estimated Fleet Size</label>
-                        <select 
-                          name="fleetSize" required value={formData.fleetSize} onChange={handleChange}
-                          className="w-full bg-page-bg border border-border-subtle focus:border-brand-blue outline-none text-text-primary px-4 py-3 transition-colors rounded-sm"
-                        >
-                          <option value="" disabled>Select Size</option>
-                          <option value="1-5">1 - 5 Vehicles</option>
-                          <option value="6-20">6 - 20 Vehicles</option>
-                          <option value="21-50">21 - 50 Vehicles</option>
-                          <option value="50+">50+ Vehicles</option>
-                        </select>
+                        <label className="text-sm font-semibold text-text-primary">Additional Comments (Optional)</label>
+                        <textarea 
+                          name="comments" placeholder="Tell us more about your fleet's specific needs..." 
+                          value={formData.comments} onChange={handleChange} rows={3}
+                          className="w-full bg-page-bg border border-border-subtle focus:border-brand-blue outline-none text-text-primary px-4 py-3 transition-colors rounded-sm resize-none"
+                        ></textarea>
                       </div>
-                    </div>
+                    </>
                   )}
 
                   {variant === 'personal' && (
