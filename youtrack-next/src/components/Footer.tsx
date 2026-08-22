@@ -47,10 +47,6 @@ export function Footer() {
             <h4 className="font-bold text-lg mb-6 tracking-tight text-white">Contact</h4>
             <ul className="space-y-4">
               <li className="flex items-center gap-3 text-white/80 text-sm font-light">
-                <Phone size={16} className="text-white/70" />
-                <a href="tel:0821234567" className="hover:text-white transition-colors">082 123 4567</a>
-              </li>
-              <li className="flex items-center gap-3 text-white/80 text-sm font-light">
                 <Mail size={16} className="text-white/70" />
                 <a href="mailto:info@youtrack.co.za" className="hover:text-white transition-colors">info@youtrack.co.za</a>
               </li>
