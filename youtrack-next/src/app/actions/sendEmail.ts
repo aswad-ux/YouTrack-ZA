@@ -35,7 +35,7 @@ export async function sendEmailAction(formData: FormData) {
       from: 'YouTrack ZA <leads@youtrackza.com>', 
       to: 'info@youtrackza.com', 
       subject: `New Lead: ${name} - ${tier || 'Inquiry'}`,
-      reply_to: email,
+      replyTo: email,
       html: htmlContent,
     });
 
