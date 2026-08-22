@@ -11,7 +11,7 @@ const fleetFeatures = [
     description: "Know exactly where your vehicles are at all times, and get notified the moment they enter or leave important areas.",
     icon: <Crosshair className="w-8 h-8 text-white" />,
     span: "col-span-1 md:col-span-2",
-    bgImage: "/assets/fleet_tracking_sun_1787259082624.jpg",
+    bgImage: "/assets/fleet_tracking_sun_1787259082624.webp",
     cardStyle: 'image' as CardStyle
   },
   {
@@ -19,7 +19,7 @@ const fleetFeatures = [
     description: "Stop a stolen vehicle in its tracks with a single tap on your mobile app.",
     icon: <ShieldAlert className="w-8 h-8 text-[#E11D48]" />,
     span: "col-span-1 md:col-span-1",
-    bgImage: "/assets/fleet_immobilizer_sun_1787259092261.jpg",
+    bgImage: "/assets/fleet_immobilizer_sun_1787259092261.webp",
     cardStyle: 'image' as CardStyle
   },
   {
@@ -27,7 +27,7 @@ const fleetFeatures = [
     description: "Get alerts for sudden drops in fuel levels, helping you stop syndicates in their tracks.",
     icon: <Fuel className="w-8 h-8 text-[#E11D48]" />,
     span: "col-span-1 md:col-span-1",
-    bgImage: "/assets/fleet_fuel_sun_1787259103510.jpg",
+    bgImage: "/assets/fleet_fuel_sun_1787259103510.webp",
     cardStyle: 'image' as CardStyle
   },
   {
@@ -35,7 +35,7 @@ const fleetFeatures = [
     description: "Record the road and the cabin simultaneously for complete peace of mind and accident evidence.",
     icon: <Video className="w-8 h-8 text-white" />,
     span: "col-span-1 md:col-span-2",
-    bgImage: "/assets/fleet_dashcam_sun_1787259116146.jpg",
+    bgImage: "/assets/fleet_dashcam_sun_1787259116146.webp",
     cardStyle: 'image' as CardStyle
   },
   {
@@ -43,7 +43,7 @@ const fleetFeatures = [
     description: "Encourage safer driving by monitoring harsh braking, rapid acceleration, and cornering.",
     icon: <Activity className="w-8 h-8 text-white" />,
     span: "col-span-1 md:col-span-2",
-    bgImage: "/assets/fleet_safety_sun_1787259127749.jpg",
+    bgImage: "/assets/fleet_safety_sun_1787259127749.webp",
     cardStyle: 'image' as CardStyle
   },
   {
@@ -51,7 +51,7 @@ const fleetFeatures = [
     description: "Automated mileage tracking makes submitting your annual tax returns a breeze.",
     icon: <CheckCircle2 className="w-8 h-8 text-[#60A5FA]" />,
     span: "col-span-1 md:col-span-1",
-    bgImage: "/assets/fleet_logbook_sun_1787259137926.jpg",
+    bgImage: "/assets/fleet_logbook_sun_1787259137926.webp",
     cardStyle: 'image' as CardStyle
   }
 ];
@@ -62,7 +62,7 @@ const personalFeatures = [
     description: "Track your car's exact location in real-time, whether it's parked at the mall or on the highway.",
     icon: <MapPin className="w-8 h-8 text-white" />,
     span: "col-span-1 md:col-span-2",
-    bgImage: "/assets/personal_tracking_sun_1787259211588.jpg",
+    bgImage: "/assets/personal_tracking_sun_1787259211588.webp",
     cardStyle: 'image' as CardStyle
   },
   {
@@ -70,7 +70,7 @@ const personalFeatures = [
     description: "Prevent unauthorized movement by remotely immobilizing your vehicle from your phone.",
     icon: <ShieldAlert className="w-8 h-8 text-[#E11D48]" />,
     span: "col-span-1 md:col-span-1",
-    bgImage: "/assets/personal_immobilizer_sun_1787259222098.jpg",
+    bgImage: "/assets/personal_immobilizer_sun_1787259222098.webp",
     cardStyle: 'image' as CardStyle
   },
   {
@@ -78,7 +78,7 @@ const personalFeatures = [
     description: "24/7 dedicated armed response and recovery teams ready to act the moment you need them.",
     icon: <Crosshair className="w-8 h-8 text-[#E11D48]" />,
     span: "col-span-1 md:col-span-1",
-    bgImage: "/assets/personal_recovery_sun_1787259233005.jpg",
+    bgImage: "/assets/personal_recovery_sun_1787259233005.webp",
     cardStyle: 'image' as CardStyle
   },
   {
@@ -86,7 +86,7 @@ const personalFeatures = [
     description: "Full control in the palm of your hand. View history, manage alerts, and lock your vehicle easily.",
     icon: <Smartphone className="w-8 h-8 text-white" />,
     span: "col-span-1 md:col-span-2",
-    bgImage: "/assets/personal_app_sun_1787259243075.jpg",
+    bgImage: "/assets/personal_app_sun_1787259243075.webp",
     cardStyle: 'image' as CardStyle
   },
   {
@@ -94,7 +94,7 @@ const personalFeatures = [
     description: "Create virtual zones around your home, work, or school, and get push notifications when your car enters or leaves.",
     icon: <Activity className="w-8 h-8 text-white" />,
     span: "col-span-1 md:col-span-2",
-    bgImage: "/assets/personal_geofence_sun_1787259252754.jpg",
+    bgImage: "/assets/personal_geofence_sun_1787259252754.webp",
     cardStyle: 'image' as CardStyle
   },
   {
@@ -102,7 +102,7 @@ const personalFeatures = [
     description: "Receive an immediate warning if your vehicle's battery is disconnected or running dangerously low.",
     icon: <BatteryWarning className="w-8 h-8 text-[#60A5FA]" />,
     span: "col-span-1 md:col-span-1",
-    bgImage: "/assets/personal_battery_sun_1787259263528.jpg",
+    bgImage: "/assets/personal_battery_sun_1787259263528.webp",
     cardStyle: 'image' as CardStyle
   }
 ];

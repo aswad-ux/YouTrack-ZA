@@ -5,6 +5,7 @@ import { Packages } from '@/components/Packages';
 import { HowItWorks } from '@/components/HowItWorks';
 import { ContactForm } from '@/components/ContactForm';
 import { ROICalculator } from '@/components/ROICalculator';
+import { FAQ } from '@/components/FAQ';
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function FleetPage() {
       <HowItWorks />
       <AppShowcase />
       <ROICalculator />
+      <FAQ />
       <ContactForm variant="fleet" />
     </main>
   );

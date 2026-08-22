@@ -3,8 +3,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const screens = [
-  "/assets/app_live_tracking_1786989390133.jpg",
-  "/assets/app_trip_history_1786989402247.jpg"
+  "/assets/app_live_tracking_1786989390133.webp",
+  "/assets/app_trip_history_1786989402247.webp"
 ];
 
 export function AppShowcase() {

@@ -12,7 +12,7 @@ export function Hero({ variant = 'personal' }: { variant?: 'personal' | 'fleet' 
     ? "Industry-leading telematics and recovery solutions for commercial fleets. Advanced reporting, real-time dashcams, and fuel monitoring."
     : "The ultimate tracking and recovery solution for your personal vehicles. Instant alerts, intuitive apps, and 24/7 recovery teams.";
 
-  const bgImage = variant === 'fleet' ? "url('/assets/hero_highway_fleet.jpg')" : "url('/assets/hero_personal.jpg')";
+  const bgImage = variant === 'fleet' ? "url('/assets/hero_highway_fleet.webp')" : "url('/assets/hero_personal.webp')";
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-[#0F172A]">
