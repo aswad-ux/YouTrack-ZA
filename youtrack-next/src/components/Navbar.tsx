@@ -48,9 +48,8 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 z-50">
-          <img src="/assets/logo_hd.svg" alt="YouTrack ZA Logo" className="h-8 md:h-10" />
+        <Link href="/" className="flex items-center gap-3 z-50 shrink-0 max-w-[70vw]">
+          <img src="/assets/logo_hd.svg" alt="YouTrack ZA Logo" className="h-6 sm:h-7 md:h-10 w-auto object-contain" />
         </Link>
 
         {/* Center Toggle Switch (Desktop) */}
