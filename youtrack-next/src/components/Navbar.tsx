@@ -39,10 +39,13 @@ export function Navbar() {
     }
   };
 
+  const isHeroPage = pathname === '/' || pathname === '/fleet';
+  const shouldBeSolid = isScrolled || !isHeroPage;
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
+        shouldBeSolid 
           ? 'bg-[#0F172A]/95 backdrop-blur-sm shadow-md py-4' 
           : 'bg-transparent py-6'
       }`}
