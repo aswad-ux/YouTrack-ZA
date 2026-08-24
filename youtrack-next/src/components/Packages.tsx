@@ -129,9 +129,12 @@ export function Packages({ variant = 'personal' }: { variant?: 'personal' | 'fle
         </div>
 
         {/* Self-Monitoring Disclaimer */}
-        <div className="text-center mt-8 p-4 md:p-6 bg-slate-100/50 border border-border-subtle rounded-sm max-w-3xl mx-auto">
-          <p className="text-text-secondary text-sm m-0">
-            <span className="text-[#1C5795] font-bold">⚡ Self-Monitoring Platform</span> — All packages are self-monitored. No recovery service included. You track, manage, and secure your vehicles directly via the app and web dashboard.
+        <div className="mt-12 p-6 bg-white border border-slate-200 shadow-sm rounded-sm max-w-3xl mx-auto flex gap-4 items-start text-left">
+          <div className="text-[#1C5795] mt-0.5 shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          </div>
+          <p className="text-slate-600 text-sm leading-relaxed m-0">
+            <strong>Please Note:</strong> Our standard packages are designed as self-managed telematics solutions. You retain full control and visibility of your vehicles directly through our web and mobile applications. Physical armed response and stolen vehicle recovery services are not included in these standard monthly subscription tiers.
           </p>
         </div>
 
