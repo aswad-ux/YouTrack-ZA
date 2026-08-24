@@ -36,10 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const count = parseInt(e.target.value, 10);
       fleetCountDisplay.textContent = count === 1 ? '1 Vehicle' : `${count} Vehicles`;
 
-      if (calcTier1) calcTier1.textContent = `R ${(count * 100).toLocaleString()}`;
-      if (calcTier2) calcTier2.textContent = `R ${(count * 150).toLocaleString()}`;
-      if (calcTier3) calcTier3.textContent = `R ${(count * 199).toLocaleString()}`;
-      if (calcTier4) calcTier4.textContent = `R ${(count * 250).toLocaleString()}`;
+      if (calcTier1) calcTier1.textContent = `R ${(count * 150).toLocaleString()}`;
+      if (calcTier2) calcTier2.textContent = `R ${(count * 199).toLocaleString()}`;
+      if (calcTier3) calcTier3.textContent = `R ${(count * 250).toLocaleString()}`;
+      if (calcTier4) calcTier4.textContent = `R ${(count * 300).toLocaleString()}`;
     });
   }
 
@@ -156,21 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 7. Auto-select tier from pricing buttons
   const tierButtons = document.querySelectorAll('.tier-card a[href="#contact"]');
-  const mlTierSelect = document.getElementById('ml-tier');
-  
-  if (tierButtons.length > 0 && mlTierSelect) {
-    tierButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const text = btn.textContent.toLowerCase();
-        if (text.includes('trace')) mlTierSelect.value = 'Trace';
-        if (text.includes('shield')) mlTierSelect.value = 'Shield';
-        if (text.includes('guard')) mlTierSelect.value = 'Guard';
-        if (text.includes('sentinel')) mlTierSelect.value = 'Sentinel';
-      });
-    });
-  }
-
-  // 8. Personal/Business Pricing Toggle
   const togglePersonal = document.getElementById('toggle-personal');
   const toggleBusiness = document.getElementById('toggle-business');
   const tierCards = document.querySelectorAll('.tier-card');
@@ -359,13 +344,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const text = btn.textContent.toLowerCase();
         if (text.includes('trace')) mlTierSelect.value = 'Trace';
         if (text.includes('shield')) mlTierSelect.value = 'Shield';
-        if (text.includes('guard')) mlTierSelect.value = 'Guard';
-        if (text.includes('sentinel')) mlTierSelect.value = 'Sentinel';
+        if (text.includes('dual cam+')) mlTierSelect.value = 'DualCamPlus';
+        else if (text.includes('dual cam')) mlTierSelect.value = 'DualCam';
       });
     });
   }
 
-  // 8. Personal/Business Pricing Toggle
+  // 8. GPS Tracking / Video Telematics Toggle
   const togglePersonal = document.getElementById('toggle-personal');
   const toggleBusiness = document.getElementById('toggle-business');
   const tierCards = document.querySelectorAll('.tier-card');
@@ -380,7 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
       toggleBusiness.style.background = 'transparent';
       toggleBusiness.style.color = 'var(--text-slate)';
 
-      // Highlight Trace & Shield (0, 1), dim Guard & Sentinel (2, 3)
+      // Highlight Trace & Shield (0, 1), dim Dual Cam tiers (2, 3)
       tierCards[0].style.opacity = '1';
       tierCards[1].style.opacity = '1';
       tierCards[2].style.opacity = '0.5';
@@ -398,7 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
       togglePersonal.style.background = 'transparent';
       togglePersonal.style.color = 'var(--text-slate)';
 
-      // Highlight Guard & Sentinel (2, 3), dim Trace & Shield (0, 1)
+      // Highlight Dual Cam tiers (2, 3), dim Trace & Shield (0, 1)
       tierCards[0].style.opacity = '0.5';
       tierCards[1].style.opacity = '0.5';
       tierCards[2].style.opacity = '1';
