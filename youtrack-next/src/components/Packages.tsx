@@ -9,13 +9,13 @@ const pricingPackages = [
     name: "Trace",
     title: "YouTrack Trace",
     subtitle: "Fleet Management Light",
-    price: "R100",
+    price: "R150",
     features: [
-      "Live Web/App Tracking",
-      "Stolen Vehicle Recovery",
-      "Geo-Fencing & Alerts",
-      "Trip History Report",
-      "Free Installation"
+      "Mobile App & Web App",
+      "Live Tracking",
+      "Geo-Fencing Alerts",
+      "History Report",
+      "Automated Tax Logbook"
     ],
     popular: false
   },
@@ -23,43 +23,45 @@ const pricingPackages = [
     name: "Shield",
     title: "YouTrack Shield",
     subtitle: "Reporting & Immobilization",
-    price: "R150",
+    price: "R199",
     features: [
-      "Everything in Trace",
+      "Mobile App & Web App",
+      "Live Tracking",
+      "Geo-Fencing Alerts",
+      "History Report",
       "Remote Engine Immobilization",
-      "Battery Disconnect Alerts",
       "Harsh Driving Alerts",
       "Automated Tax Logbook"
     ],
     popular: false
   },
   {
-    name: "Guard",
-    title: "YouTrack Guard",
-    subtitle: "Tracking + Recovery",
-    price: "R199",
-    features: [
-      "Everything in Trace",
-      "Backup Wireless Beame Device",
-      "Dual Network Roaming",
-      "Insurance Approved",
-      "Priority Recovery Team"
-    ],
-    popular: true
-  },
-  {
-    name: "Sentinel",
-    title: "YouTrack Sentinel",
-    subtitle: "Ultimate Security & Recovery",
+    name: "DualCam",
+    title: "YouTrack Dual Cam",
+    subtitle: "Live Video Telematics",
     price: "R250",
     features: [
-      "Everything in Trace",
-      "Remote Engine Immobilization",
-      "Backup Wireless Beame Device",
-      "Anti-Jamming Technology",
-      "Comprehensive Analytics"
+      "Mobile App & Web App",
+      "Live Tracking",
+      "Geo-Fencing Alerts",
+      "History Report",
+      "Dual Live HD Dashcam"
     ],
     popular: false
+  },
+  {
+    name: "DualCamPlus",
+    title: "YouTrack Dual Cam + Immobilization",
+    subtitle: "Complete Video & Security",
+    price: "R300",
+    features: [
+      "Dual Live HD Dashcam",
+      "Remote Engine Immobilization",
+      "Battery Disconnect Alerts",
+      "Harsh Driving Alerts",
+      "Automated Tax Logbook"
+    ],
+    popular: true
   }
 ];
 
@@ -124,6 +126,13 @@ export function Packages({ variant = 'personal' }: { variant?: 'personal' | 'fle
               </Link>
             </motion.div>
           ))}
+        </div>
+
+        {/* Self-Monitoring Disclaimer */}
+        <div className="text-center mt-8 p-4 md:p-6 bg-slate-100/50 border border-border-subtle rounded-sm max-w-3xl mx-auto">
+          <p className="text-text-secondary text-sm m-0">
+            <span className="text-[#1C5795] font-bold">⚡ Self-Monitoring Platform</span> — All packages are self-monitored. No recovery service included. You track, manage, and secure your vehicles directly via the app and web dashboard.
+          </p>
         </div>
 
         {variant === 'fleet' && (

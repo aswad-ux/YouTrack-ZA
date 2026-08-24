@@ -178,10 +178,10 @@ function FormContent({ variant }: { variant: 'personal' | 'fleet' }) {
                           className="w-full bg-page-bg border border-border-subtle focus:border-brand-blue outline-none text-text-primary px-4 py-3 transition-colors rounded-sm"
                         >
                           <option value="" disabled>Select Package</option>
-                          <option value="Trace">YouTrack Trace</option>
-                          <option value="Shield">YouTrack Shield</option>
-                          <option value="Guard">YouTrack Guard</option>
-                          <option value="Sentinel">YouTrack Sentinel</option>
+                          <option value="Trace">YouTrack Trace — R150/mo</option>
+                          <option value="Shield">YouTrack Shield — R199/mo</option>
+                          <option value="DualCam">YouTrack Dual Cam — R250/mo</option>
+                          <option value="DualCamPlus">YouTrack Dual Cam + Immobilization — R300/mo</option>
                         </select>
                       </div>
                     )}
