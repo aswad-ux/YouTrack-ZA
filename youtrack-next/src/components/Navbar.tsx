@@ -113,7 +113,7 @@ export function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-[#0F172A] z-40 flex flex-col items-center justify-center gap-8 pt-16"
+              className="fixed inset-0 bg-slate-900 z-40 flex flex-col items-center justify-center gap-8 pt-16"
             >
               {/* Mobile Toggle */}
               <div className="flex items-center bg-white/10 backdrop-blur-sm p-1 rounded-sm border border-white/20 mb-4">
