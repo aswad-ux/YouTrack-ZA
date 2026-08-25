@@ -180,8 +180,8 @@ function FormContent({ variant }: { variant: 'personal' | 'fleet' }) {
                           <option value="" disabled>Select Package</option>
                           <option value="Trace">YouTrack Trace — R150/mo</option>
                           <option value="Shield">YouTrack Shield — R199/mo</option>
-                          <option value="DualCam">YouTrack Dual Cam — R250/mo</option>
-                          <option value="DualCamPlus">YouTrack Dual Cam + Immobilization — R300/mo</option>
+                          <option value="Witness">YouTrack Witness — R250/mo</option>
+                          <option value="Overwatch">YouTrack Overwatch — R300/mo</option>
                         </select>
                       </div>
                     )}

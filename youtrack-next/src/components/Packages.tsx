@@ -36,8 +36,8 @@ const pricingPackages = [
     popular: false
   },
   {
-    name: "DualCam",
-    title: "YouTrack Dual Cam",
+    name: "Witness",
+    title: "YouTrack Witness",
     subtitle: "Live Video Telematics",
     price: "R250",
     features: [
@@ -50,8 +50,8 @@ const pricingPackages = [
     popular: false
   },
   {
-    name: "DualCamPlus",
-    title: "YouTrack Dual Cam + Immobilization",
+    name: "Overwatch",
+    title: "YouTrack Overwatch",
     subtitle: "Complete Video & Security",
     price: "R300",
     features: [
