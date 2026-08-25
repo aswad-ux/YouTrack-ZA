@@ -199,8 +199,8 @@ function FormContent({ variant }: { variant: 'personal' | 'fleet' }) {
                             <option value="" disabled>Select Package</option>
                             <option value="Trace">YouTrack Trace</option>
                             <option value="Shield">YouTrack Shield</option>
-                            <option value="Guard">YouTrack Guard</option>
-                            <option value="Sentinel">YouTrack Sentinel</option>
+                            <option value="Witness">YouTrack Witness</option>
+                            <option value="Overwatch">YouTrack Overwatch</option>
                             <option value="Dashcams">Dashcams Only</option>
                             <option value="Fuel">Fuel Monitoring Only</option>
                             <option value="Custom">Custom Solution</option>
