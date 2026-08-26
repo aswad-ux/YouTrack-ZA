@@ -131,45 +131,49 @@ export function Packages({ variant = 'personal' }: { variant?: 'personal' | 'fle
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 auto-rows-auto lg:auto-rows-[1fr]">
             {/* Trace (Basic) - Top Left */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm flex flex-col hover:-translate-y-1 transition-transform relative overflow-hidden">
-              <h3 className="text-2xl font-bold text-text-primary tracking-tight mb-2">Trace</h3>
-              <p className="text-text-secondary text-sm font-light h-10">Fleet Management Light</p>
-              
-              <div className="w-full h-32 md:h-40 mb-6 rounded-2xl overflow-hidden relative border border-slate-100">
-                <img src="/assets/fleet_bento_trace.jpg" alt="Fleet tracking dashboard map" className="w-full h-full object-cover" />
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm flex flex-col hover:-translate-y-1 transition-transform relative overflow-hidden group">
+              <div className="absolute inset-0 z-0">
+                <img src="/assets/fleet_bento_trace.jpg" alt="Fleet tracking dashboard map" className="w-full h-full object-cover opacity-15 mix-blend-luminosity group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent" />
               </div>
 
-              <div className="mb-6 pt-2 border-t border-slate-100">
-                <span className="text-4xl font-extrabold tracking-tighter text-text-primary">R150</span>
-                <span className="text-text-secondary font-light">/mo</span>
+              <div className="relative z-10 flex flex-col h-full">
+                <h3 className="text-2xl font-bold text-text-primary tracking-tight mb-2">Trace</h3>
+                <p className="text-text-secondary text-sm font-light h-10">Fleet Management Light</p>
+                <div className="my-6 pt-6 border-t border-slate-200">
+                  <span className="text-4xl font-extrabold tracking-tighter text-text-primary">R150</span>
+                  <span className="text-text-secondary font-light">/mo</span>
+                </div>
+                <ul className="space-y-4 mb-8 flex-grow">
+                  {pricingPackages[0].features.map((f, i) => (
+                    <li key={i} className="flex items-start gap-3"><Check className="w-5 h-5 shrink-0 text-slate-400" /><span className="text-text-primary font-light text-sm">{f}</span></li>
+                  ))}
+                </ul>
+                <Link href="?package=Trace#contact" className="mt-auto w-full py-3 text-center font-bold tracking-tight rounded-xl bg-white/80 text-text-primary border border-slate-300 hover:border-[#1C5795] hover:text-[#1C5795] backdrop-blur-sm transition-colors shadow-sm">Select Trace</Link>
               </div>
-              <ul className="space-y-4 mb-8 flex-grow">
-                {pricingPackages[0].features.map((f, i) => (
-                  <li key={i} className="flex items-start gap-3"><Check className="w-5 h-5 shrink-0 text-slate-400" /><span className="text-text-primary font-light text-sm">{f}</span></li>
-                ))}
-              </ul>
-              <Link href="?package=Trace#contact" className="mt-auto w-full py-3 text-center font-bold tracking-tight rounded-xl bg-slate-50 text-text-primary border border-slate-200 hover:border-[#1C5795] hover:text-[#1C5795] transition-colors">Select Trace</Link>
             </motion.div>
 
             {/* Shield (Mid) - Top Middle */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm flex flex-col hover:-translate-y-1 transition-transform">
-              <h3 className="text-2xl font-bold text-text-primary tracking-tight mb-2">Shield</h3>
-              <p className="text-text-secondary text-sm font-light h-10">Reporting & Immobilization</p>
-              
-              <div className="w-full h-32 md:h-40 mb-6 rounded-2xl overflow-hidden relative border border-slate-100">
-                <img src="/assets/fleet_bento_shield.jpg" alt="Secure commercial van parked at night" className="w-full h-full object-cover" />
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="bg-white border border-slate-200 rounded-3xl p-8 shadow-sm flex flex-col hover:-translate-y-1 transition-transform relative overflow-hidden group">
+              <div className="absolute inset-0 z-0">
+                <img src="/assets/fleet_bento_shield.jpg" alt="Secure commercial van parked at night" className="w-full h-full object-cover opacity-15 mix-blend-luminosity group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent" />
               </div>
 
-              <div className="mb-6 pt-2 border-t border-slate-100">
-                <span className="text-4xl font-extrabold tracking-tighter text-text-primary">R199</span>
-                <span className="text-text-secondary font-light">/mo</span>
+              <div className="relative z-10 flex flex-col h-full">
+                <h3 className="text-2xl font-bold text-text-primary tracking-tight mb-2">Shield</h3>
+                <p className="text-text-secondary text-sm font-light h-10">Reporting & Immobilization</p>
+                <div className="my-6 pt-6 border-t border-slate-200">
+                  <span className="text-4xl font-extrabold tracking-tighter text-text-primary">R199</span>
+                  <span className="text-text-secondary font-light">/mo</span>
+                </div>
+                <ul className="space-y-4 mb-8 flex-grow">
+                  {pricingPackages[1].features.map((f, i) => (
+                    <li key={i} className="flex items-start gap-3"><Check className="w-5 h-5 shrink-0 text-[#1C5795]" /><span className="text-text-primary font-light text-sm">{f}</span></li>
+                  ))}
+                </ul>
+                <Link href="?package=Shield#contact" className="mt-auto w-full py-3 text-center font-bold tracking-tight rounded-xl bg-white/80 text-text-primary border border-slate-300 hover:border-[#1C5795] hover:text-[#1C5795] backdrop-blur-sm transition-colors shadow-sm">Select Shield</Link>
               </div>
-              <ul className="space-y-4 mb-8 flex-grow">
-                {pricingPackages[1].features.map((f, i) => (
-                  <li key={i} className="flex items-start gap-3"><Check className="w-5 h-5 shrink-0 text-[#1C5795]" /><span className="text-text-primary font-light text-sm">{f}</span></li>
-                ))}
-              </ul>
-              <Link href="?package=Shield#contact" className="mt-auto w-full py-3 text-center font-bold tracking-tight rounded-xl bg-slate-50 text-text-primary border border-slate-200 hover:border-[#1C5795] hover:text-[#1C5795] transition-colors">Select Shield</Link>
             </motion.div>
 
             {/* Overwatch (Premium) - Right Column, Spans 2 Rows */}
