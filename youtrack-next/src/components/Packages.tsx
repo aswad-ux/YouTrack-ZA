@@ -207,26 +207,29 @@ export function Packages({ variant = 'personal' }: { variant?: 'personal' | 'fle
             </motion.div>
 
             {/* Witness (Video) - Bottom Left & Middle, Spans 2 Columns */}
-            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="lg:col-span-2 bg-slate-100/80 border border-slate-200 rounded-3xl p-8 shadow-sm flex flex-col sm:flex-row gap-8 hover:-translate-y-1 transition-transform">
-              <div className="flex-1 flex flex-col">
-                <h3 className="text-2xl font-bold text-text-primary tracking-tight mb-2">Witness</h3>
-                <p className="text-text-secondary text-sm font-light mb-4">Live Video Telematics</p>
-                
-                <div className="w-full h-32 md:flex-grow mb-6 rounded-2xl overflow-hidden relative border border-slate-200">
-                  <img src="/assets/fleet_bento_witness.jpg" alt="Commercial vehicle cabin dashcam view" className="w-full h-full object-cover" />
-                </div>
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.3 }} className="lg:col-span-2 bg-slate-50 border border-slate-200 rounded-3xl p-8 shadow-sm flex flex-col sm:flex-row gap-8 hover:-translate-y-1 transition-transform relative overflow-hidden group">
+              <div className="absolute inset-0 z-0">
+                <img src="/assets/fleet_bento_witness.jpg" alt="Commercial vehicle cabin dashcam view" className="w-full h-full object-cover opacity-15 mix-blend-luminosity group-hover:scale-105 transition-transform duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/90 to-slate-50/60" />
               </div>
-              <div className="flex-1 flex flex-col sm:border-l border-slate-200 sm:pl-8">
-                <div className="mb-6">
-                  <span className="text-4xl font-extrabold tracking-tighter text-text-primary">R250</span>
+              
+              <div className="relative z-10 flex-1 flex flex-col justify-center">
+                <h3 className="text-3xl font-bold text-text-primary tracking-tight mb-2">Witness</h3>
+                <p className="text-text-secondary font-light mb-8">Live Video Telematics</p>
+                
+                <div>
+                  <span className="text-5xl font-extrabold tracking-tighter text-text-primary">R250</span>
                   <span className="text-text-secondary font-light">/mo</span>
                 </div>
+              </div>
+              
+              <div className="relative z-10 flex-1 flex flex-col sm:border-l border-slate-300/50 sm:pl-8">
                 <ul className="space-y-4 mb-8 flex-grow">
                   {pricingPackages[2].features.map((f, i) => (
                     <li key={i} className="flex items-start gap-3"><Check className="w-5 h-5 shrink-0 text-[#1C5795]" /><span className="text-text-primary font-light text-sm">{f}</span></li>
                   ))}
                 </ul>
-                <Link href="?package=Witness#contact" className="mt-auto w-full py-3 text-center font-bold tracking-tight rounded-xl bg-white text-text-primary border border-slate-300 hover:border-[#1C5795] hover:text-[#1C5795] transition-colors shadow-sm">Equip Witness</Link>
+                <Link href="?package=Witness#contact" className="mt-auto w-full py-3 text-center font-bold tracking-tight rounded-xl bg-white/80 text-text-primary border border-slate-300 hover:border-[#1C5795] hover:text-[#1C5795] backdrop-blur-sm transition-colors shadow-sm">Equip Witness</Link>
               </div>
             </motion.div>
           </div>
