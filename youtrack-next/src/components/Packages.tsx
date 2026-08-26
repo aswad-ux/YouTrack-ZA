@@ -252,18 +252,12 @@ export function Packages({ variant = 'personal' }: { variant?: 'personal' | 'fle
               <p className="text-text-secondary font-light">Specialized hardware and software integrations for large scale logistics and heavy commercial vehicles.</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              <div className="bg-white p-8 border border-border-subtle shadow-sm rounded-sm flex flex-col hover:-translate-y-1 transition-transform">
+            <div className="grid grid-cols-1 gap-6 max-w-xl mx-auto">
+              <div className="bg-white p-8 border border-border-subtle shadow-sm rounded-sm flex flex-col hover:-translate-y-1 transition-transform text-center">
                 <h4 className="text-xl font-bold text-text-primary mb-2">Fuel Monitoring</h4>
                 <p className="text-text-secondary text-sm font-light mb-6 flex-grow">Stop syndicates in their tracks. High-precision fuel probes detect siphoning and sudden drops in fuel levels instantly.</p>
                 <div className="text-2xl font-extrabold text-[#E11D48] mb-6 tracking-tight">Custom Quote</div>
-                <Link href="?package=Fuel#contact" className="w-full py-3 text-center block font-bold tracking-tight rounded-sm transition-colors bg-white text-text-primary border border-slate-200 hover:border-[#1C5795] hover:text-[#1C5795]">Request Quote</Link>
-              </div>
-              <div className="bg-white p-8 border border-border-subtle shadow-sm rounded-sm flex flex-col hover:-translate-y-1 transition-transform">
-                <h4 className="text-xl font-bold text-text-primary mb-2">Dual-Camera Dashcams</h4>
-                <p className="text-text-secondary text-sm font-light mb-6 flex-grow">Live video streaming of both the road and the cabin. Automatic incident backups to the cloud and driver coaching.</p>
-                <div className="text-2xl font-extrabold text-[#E11D48] mb-6 tracking-tight">Custom Quote</div>
-                <Link href="?package=Dashcams#contact" className="w-full py-3 text-center block font-bold tracking-tight rounded-sm transition-colors bg-white text-text-primary border border-slate-200 hover:border-[#1C5795] hover:text-[#1C5795]">Request Quote</Link>
+                <Link href="?package=Fuel#contact" className="w-full py-3 text-center block font-bold tracking-tight rounded-sm transition-colors bg-slate-50 text-text-primary border border-slate-200 hover:border-[#1C5795] hover:text-[#1C5795]">Request Quote</Link>
               </div>
             </div>
           </div>
