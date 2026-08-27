@@ -8,6 +8,7 @@ export function Hero({ variant = 'personal' }: { variant?: 'personal' | 'fleet' 
   React.useEffect(() => {
     if (videoRef.current) {
       // Force playback on mount to bypass strict browser autoplay policies
+      videoRef.current.defaultMuted = true;
       videoRef.current.play().catch(error => {
         console.log("Autoplay was prevented by the browser:", error);
       });
@@ -40,7 +41,6 @@ export function Hero({ variant = 'personal' }: { variant?: 'personal' | 'fleet' 
           autoPlay
           loop
           muted
-          defaultMuted
           playsInline
           poster={variant === 'fleet' ? '/assets/hero_highway_fleet.webp' : '/assets/hero_personal.webp'}
           className="absolute inset-0 w-full h-full object-cover"
