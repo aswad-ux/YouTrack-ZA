@@ -17,19 +17,32 @@ export function Hero({ variant = 'personal' }: { variant?: 'personal' | 'fleet' 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-[#0F172A]">
       
-      {/* Cinematic Image Background */}
+      {/* Cinematic Background */}
       <motion.div 
         className="absolute inset-0 w-full h-full"
         initial={{ opacity: 0, scale: 1.05 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, delay: 0.2 }}
       >
-        <div 
-          className="absolute inset-0 bg-cover bg-center md:bg-right"
-          style={{ backgroundImage: bgImage }}
-        />
+        {/* Video Background */}
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          poster={variant === 'fleet' ? '/assets/hero_highway_fleet.webp' : '/assets/hero_personal.webp'}
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          {/* High-quality placeholder videos from a public CDN - Replace these URLs with your actual hosted videos later */}
+          <source 
+            src={variant === 'fleet' 
+              ? 'https://cdn.coverr.co/videos/coverr-driving-on-a-highway-at-night-2646/1080p.mp4' 
+              : 'https://cdn.coverr.co/videos/coverr-driving-in-the-city-at-night-4228/1080p.mp4'} 
+            type="video/mp4" 
+          />
+        </video>
         
-        {/* Subtle dark vignette mask for text readability without washing out the image */}
+        {/* Subtle dark vignette mask for text readability without washing out the video */}
         <div 
           className="absolute inset-0" 
           style={{ background: 'linear-gradient(to right, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.6) 40%, rgba(15, 23, 42, 0.1) 100%)' }}
