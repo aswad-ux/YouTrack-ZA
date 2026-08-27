@@ -40,7 +40,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     description: 'Insurance-approved vehicle tracking, fleet management, and 24/7 stolen vehicle recovery across South Africa.',
     '@id': 'https://youtrackza.com',
     url: 'https://youtrackza.com',
-    telephone: '+27820000000', // Update with real number
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Johannesburg',
