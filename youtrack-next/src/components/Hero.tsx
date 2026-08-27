@@ -3,6 +3,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 export function Hero({ variant = 'personal' }: { variant?: 'personal' | 'fleet' }) {
+  const videoRef = React.useRef<HTMLVideoElement>(null);
+
+  React.useEffect(() => {
+    if (videoRef.current) {
+      // Force playback on mount to bypass strict browser autoplay policies
+      videoRef.current.play().catch(error => {
+        console.log("Autoplay was prevented by the browser:", error);
+      });
+    }
+  }, []);
 
   const title = variant === 'fleet' 
     ? <>Optimize Your Fleet.<br/>Protect Your Assets.</> 
@@ -26,9 +36,11 @@ export function Hero({ variant = 'personal' }: { variant?: 'personal' | 'fleet' 
       >
         {/* Video Background */}
         <video
+          ref={videoRef}
           autoPlay
           loop
           muted
+          defaultMuted
           playsInline
           poster={variant === 'fleet' ? '/assets/hero_highway_fleet.webp' : '/assets/hero_personal.webp'}
           className="absolute inset-0 w-full h-full object-cover"
