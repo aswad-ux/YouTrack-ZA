@@ -3,17 +3,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 export function Hero({ variant = 'personal' }: { variant?: 'personal' | 'fleet' }) {
-  const videoRef = React.useRef<HTMLVideoElement>(null);
-
-  React.useEffect(() => {
-    if (videoRef.current) {
-      // Force playback on mount to bypass strict browser autoplay policies
-      videoRef.current.defaultMuted = true;
-      videoRef.current.play().catch(error => {
-        console.log("Autoplay was prevented by the browser:", error);
-      });
-    }
-  }, []);
 
   const title = variant === 'fleet' 
     ? <>Optimize Your Fleet.<br/>Protect Your Assets.</> 
@@ -28,33 +17,19 @@ export function Hero({ variant = 'personal' }: { variant?: 'personal' | 'fleet' 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-[#0F172A]">
       
-      {/* Cinematic Background */}
+      {/* Cinematic Image Background */}
       <motion.div 
         className="absolute inset-0 w-full h-full"
         initial={{ opacity: 0, scale: 1.05 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, delay: 0.2 }}
       >
-        {/* Video Background */}
-        <video
-          ref={videoRef}
-          autoPlay
-          loop
-          muted
-          playsInline
-          poster={variant === 'fleet' ? '/assets/hero_highway_fleet.webp' : '/assets/hero_personal.webp'}
-          className="absolute inset-0 w-full h-full object-cover"
-        >
-          {/* High-quality placeholder videos from a public CDN - Replace these URLs with your actual hosted videos later */}
-          <source 
-            src={variant === 'fleet' 
-              ? 'https://cdn.coverr.co/videos/coverr-driving-on-a-highway-at-night-2646/1080p.mp4' 
-              : 'https://cdn.coverr.co/videos/coverr-driving-in-the-city-at-night-4228/1080p.mp4'} 
-            type="video/mp4" 
-          />
-        </video>
+        <div 
+          className="absolute inset-0 bg-cover bg-center md:bg-right"
+          style={{ backgroundImage: bgImage }}
+        />
         
-        {/* Subtle dark vignette mask for text readability without washing out the video */}
+        {/* Subtle dark vignette mask for text readability without washing out the image */}
         <div 
           className="absolute inset-0" 
           style={{ background: 'linear-gradient(to right, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.6) 40%, rgba(15, 23, 42, 0.1) 100%)' }}
