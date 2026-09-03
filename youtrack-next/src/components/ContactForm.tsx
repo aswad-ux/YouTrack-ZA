@@ -23,6 +23,7 @@ function FormContent({ variant }: { variant: 'personal' | 'fleet' }) {
   });
   
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState<string>('');
 
   useEffect(() => {
     const packageParam = searchParams.get('package');
@@ -44,6 +45,7 @@ function FormContent({ variant }: { variant: 'personal' | 'fleet' }) {
       
       if (result.success) {
         setStatus('success');
+        setErrorMessage('');
         // Reset after 5 seconds
         setTimeout(() => {
           setStatus('idle');
@@ -54,11 +56,12 @@ function FormContent({ variant }: { variant: 'personal' | 'fleet' }) {
         }, 5000);
       } else {
         setStatus('error');
-        alert(`Error: ${result.error}`);
+        setErrorMessage(result.error || 'Something went wrong. Please try again.');
       }
     } catch (error) {
       setStatus('error');
-      alert(`Unexpected Error: ${error}`);
+      setErrorMessage('Could not send your request. Please check your connection and try again.');
+      console.error('Form submission error:', error);
     }
   };
 
@@ -252,6 +255,13 @@ function FormContent({ variant }: { variant: 'personal' | 'fleet' }) {
                   )}
 
                   <div className="flex flex-col items-start gap-4 pt-6 border-t border-border-subtle">
+
+                    {status === 'error' && errorMessage && (
+                      <div className="w-full bg-red-50 border border-red-200 text-red-700 text-sm px-4 py-3 rounded-sm">
+                        {errorMessage}
+                      </div>
+                    )}
+
                     <label className="flex items-center gap-3 cursor-pointer">
                       <input 
                         type="checkbox" name="agree" required checked={formData.agree} onChange={handleChange}
